@@ -14,4 +14,4 @@
 
 
 ##学习课程：
-通过学习 [B站：Spring从入门到实战](https://www.bilibili.com/video/av62689841) 写的Demo代码，这个课程很不错，简单明了。
+通过学习 《[B站：Spring从入门到实战](https://www.bilibili.com/video/av62689841)》 写的Demo代码，这个课程很不错，简单明了。
