@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="cn.zelkova.zp" />
+
+    <!-- 配置类中，注解设置 -->
+<!--    <aop:aspectj-autoproxy />-->
+
+    <bean id="student1" class="cn.zelkova.zp.entity.Student">
+        <property name="id" value="111111"/>
+        <property name="name" value="jiutian"/>
+        <property name="age" value="12"/>
+        <property name="address" ref="address"/>
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean id="student2" class="cn.zelkova.zp.entity.Student">
+        <property name="id" value="222222"/>
+        <property name="name" value="liangliang"/>
+        <property name="age" value="8"/>
+        <property name="address" ref="address"/>
+    </bean>
+
+    <bean id="address" class="cn.zelkova.zp.entity.Address">
+        <property name="id" value="9999"/>
+        <property name="street" value="天等路"/>
+    </bean>
+
+    <bean id="car" class="cn.zelkova.zp.factory.StaticCarFactory" factory-method="getCar">
+        <constructor-arg name="id" value="1"/>
+    </bean>
+
+    <bean id="carFactory" class="cn.zelkova.zp.factory.InstanceCarFactory">
+
+    </bean>
+
+    <bean id="car2" factory-bean="carFactory" factory-method="getCar">
+        <constructor-arg name="id" value="2"/>
+    </bean>
+</beans>
+
