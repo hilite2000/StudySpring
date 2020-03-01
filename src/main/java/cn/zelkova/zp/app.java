@@ -27,8 +27,8 @@ public class app {
 //				System.out.println(st);
 
 				//读取配置文件myspring.xml
-				//component-scan，启动了对包bean的扫描，spring AOP部分，就是依赖这个开关。
-				//	通过这个开关，就可实现 配置文件和注解同时失效的效果
+				//component-scan，启动了对包bean的扫描，spring AOP部分，就是通过这个开关打开注解方式的。
+				//	通过这个开关，就可实现 配置文件和注解同时生效的效果
 				ApplicationContext appCtx = new ClassPathXmlApplicationContext("myspring.xml");
 				//如果用这个，需要给bean加上@Component 和 @Autowaired
 				//ApplicationContext appCtx = new AnnotationConfigApplicationContext("cn.zelkova.zp");
